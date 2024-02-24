@@ -4,7 +4,7 @@ metadata:
   name: ingress-example  # Define the name of the Ingress resource
 spec:
   rules:
-  - host: "foo.bar.com"  # Define the host for domain-based routing
+  - host: "foo.bar.com"  # Define the host for domain-based routing, path based routing also
     http:
       paths:
       - pathType: Prefix  # Define the type of path matching
