@@ -1,21 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-python-webapp-deployment
+  name: sample-python-webapp-deployment  # Define the name of the deployment
   labels:
-    app: python-webapp-deployment
+    app: python-webapp-deployment  # Define labels for the deployment
 spec:
-  replicas: 2
+  replicas: 2  # Define the desired number of replicas for the deployment
   selector:
     matchLabels:
-      app: python-webapp-deployment
+      app: python-webapp-deployment  # Define the selector to match labels for pods
   template:
     metadata:
       labels:
-        app: python-webapp-deployment
+        app: python-webapp-deployment  # Define labels for the pods created from this template
     spec:
       containers:
-      - name: python-webapp-container
-        image: ashutoshkumar999/python-sample-app-demo:v1 #Push the Image to a Registry first before creating deployment (if not already pushed),If the image is built locally but not pushed, push it to a registry accessible to your cluster nodes.
+      - name: python-webapp-container  # Define the name of the container
+        image: ashutoshkumar999/python-sample-app-demo:v1  # Define the image for the container
+        # Push the Image to a Registry first before creating deployment
+        # If not already pushed, build it locally and push it to a registry accessible to your cluster nodes.
         ports:
-        - containerPort: 8000
+        - containerPort: 8000  # Define the container port to expose

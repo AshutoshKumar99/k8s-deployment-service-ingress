@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-webapp-service
+  name: python-webapp-service  # Define the name of the service
 spec:
-  type: NodePort
+  type: NodePort  # Define the type of service as NodePort
   selector:
-    app: python-webapp-deployment
+    app: python-webapp-deployment  # Select pods with these labels
   ports:
-    - port: 80
-      targetPort: 8000
-      nodePort: 30007
+    - port: 80  # Define the service port number
+      targetPort: 8000  # Define the container port to forward traffic to
+      nodePort: 30007  # Define the node port for accessing the service externally

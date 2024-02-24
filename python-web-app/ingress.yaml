@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-example  # Define the name of the Ingress resource
+spec:
+  rules:
+  - host: "foo.bar.com"  # Define the host for domain-based routing
+    http:
+      paths:
+      - pathType: Prefix  # Define the type of path matching
+        path: "/demo"  # Define the prefix path
+        backend:
+          service:
+            name: python-webapp-service  # Define the name of the backend service
+            port:
+              number: 80  # Define the service port number
